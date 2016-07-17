@@ -1,0 +1,29 @@
+﻿@model EVotingSystems.Models.VoterPerson
+@{
+    ViewBag.Title = "FacialVerification";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<body>
+
+
+    @using (Html.BeginForm("Verifyface", "CastVote", FormMethod.Post))
+    { <div class="login">
+        <h1>Verification</h1>
+        <div class="form">
+            
+            
+            <p class="message">
+                <img class="img-responsive" style="margin:0 auto;" src="~/Content/CastVote/Facial.jpg" alt=""/>
+            </p>
+        
+            <p class="submit"><input type="submit" name="sent" value="Verify"></p>
+            <p class="message">@Html.ActionLink("Go Back", "MobileVerification", "CastVote")</p>
+        </div>
+
+    </div>
+   
+    }
+</body>
+

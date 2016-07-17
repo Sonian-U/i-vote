@@ -1,0 +1,26 @@
+﻿@model EVotingSystems.Models.VoterPerson
+@{
+    ViewBag.Title = "MobileVerification";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<body>
+
+
+    @using (Html.BeginForm("VerifyMobile", "CastVote", FormMethod.Post))
+    { <div class="login">
+        <h1>Verification</h1>
+        <div class="form">
+            <p class="field">
+
+                @Html.TextBoxFor(m => m.Mobile, new { @class = "form-control", placeholder = Html.DisplayName("Mobile No") })
+
+            </p>
+            <p class="submit"><input type="submit" name="sent" value="Verify"></p>
+            <p class="message">@Html.ActionLink("Go Back", "Index", "CastVote")</p>
+        </div>
+         
+    </div>
+  
+    }
+</body>

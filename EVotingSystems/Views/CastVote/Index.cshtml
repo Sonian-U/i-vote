@@ -1,0 +1,27 @@
+﻿@model EVotingSystems.Models.VoterPerson
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<body>
+
+
+    @using (Html.BeginForm("VerifyCNIC", "CastVote", FormMethod.Post))
+    { <div class="login">
+        <h1>Verification</h1>
+        <div class="form">
+            <p class="field">
+                  
+                  @Html.TextBoxFor(m => m.CNIC, new { @class = "form-control", placeholder = Html.DisplayName("CNIC") })
+               
+            </p>
+            <p class="submit"><input type="submit" name="sent" value="Verify"></p>
+
+        </div>
+    </div>
+   
+    }
+</body>
